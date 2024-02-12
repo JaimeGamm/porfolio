@@ -1,82 +1,56 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Card from '../components/Card.astro';
-import Badge from '../components/Badge.astro';
-import GitHub from '../components/icons/GitHub.astro';
-import Linkendln from '../components/icons/LinkedIn.astro';
-import SocialPill from '../components/SocialPill.astro';
-import MailIcono from '../components/icons/Mail.astro'
-import Experience from '../components/Experience.astro';
-import SectionComptainer from '../components/SectionContainer.astro';
-import Briefcase from '../components/icons/Briefcase.astro';
-import Code from '../components/icons/Code.astro';
-import ProfileCheck from '../components/icons/ProfileCheck.astro';
-import Projects from '../components/Projects.astro';
-import AboutMe from '../components/AboutMe.astro';
+import Layout from "@/layouts/Layout.astro"
+
+import AboutMe from "@/components/AboutMe.astro"
+import Briefcase from "@/components/icons/Briefcase.astro"
+import CodeIcon from "@/components/icons/Code.astro"
+import Experience from "@/components/Experience.astro"
+import ProfileCheck from "@/components/icons/ProfileCheck.astro"
+import Projects from "@/components/Projects.astro"
+import SectionContainer from "@/components/SectionContainer.astro"
+import Hero from "@/components/Hero.astro"
 ---
 
-<Layout title="Porfolio Jaime Saenz -- Desarrollador y Analista de Datos"
-description ="Porfolio Jaime Saenz -- Desarrollador y Analista de Datos">
-	<main class="px-4">
-		<SectionComptainer class = "py-44 pb-32">
-			<img class="rounded-full w-12 h-12 mb-4" 
-			src="/src/images/Foto.jpg " alt = "perfil photo"/> 
-			<h1 class="text-while text-3xl md:4xl lg:text-5xl font-bold flex flex-row gap-x-4 pb-6 lg:pb-10">Hey, Soy Jaime Saenz 
-			<a href="http://www.linkedin.com/in/jaime-de-jesus-saenz-gamboa" 
-			target="_blank" 
-			rel="noopener" 
-			class="flex justify-center items-center"
-			>
-				<Badge>Disponible para trabajar</Badge>
-			</a>
+<Layout
+  title="Porfolio de midudev - Desarrollador y Programador Web con 15 años de experiencia"
+  description="Contrata a midudev para crear tu aplicación web o móvil. Desarrollador Web y Creador de Contenido. Especializado en crear aplicaciones únicas."
+>
+  <main class="px-4">
+    <SectionContainer class="py-16 md:py-36">
+      <Hero>
+      </slot>
+    </Hero>
+    </SectionContainer>
+    <div class="space-y-24">
+    <SectionContainer id="experiencia">
+      <h2
+        class="flex items-center mb-6 text-3xl font-semibold gap-x-3 text-black/80 dark:text-white"
+      >
+        <Briefcase class="size-8" />
+        Experiencia laboral
+      </h2>
+      <Experience />
+    </SectionContainer>
 
-			</h1>
-			<h2 class="text-xl text-1 opacity-80 text-wrap max-w-[700px]">
-				<span>+1 año de experiencia</span>. <span class="text-yellow-200/90"> Desarrollador wed y analista de datos</span>.
-				<span class="text-yellow-200/90"> De Colombia, Bogota</span>. <span class="opacity-75"> Especializador en resolucion de problemas</span>
-			</h2>
+    <SectionContainer id="proyectos">
+      <h2
+        class="flex items-center mb-6 text-3xl font-semibold gap-x-3 text-black/80 dark:text-white"
+      >
+        <CodeIcon class="size-7" />
+        Proyectos
+      </h2>
+      <Projects />
+    </SectionContainer>
 
-			<nav class="flex gap-4 mt-8 flex-wrap">
-				
-				<SocialPill href="http://www.linkedin.com/in/">
-					<Linkendln class= "size-4 md:size-6"/>
-						LinkedIn
-				</SocialPill>
-				<SocialPill href="https://github.com/JaimeGamm">
-					<GitHub class= "size-4 md:size-6"/>
-						GitHub
-				</SocialPill>
-				<SocialPill href="jaimedejesusgamm1@gmail.com">
-					<MailIcono class= "size-4 md:size-6"/>
-						jaimedejesusgamm1@gmail.com
-				</SocialPill>
-
-				
-			</nav>
-		</SectionComptainer>
-		<SectionComptainer id="experience">
-			<h2 class="text-2xl font-semibold mb-6 flex gap-x-3 items-center">
-				<Briefcase class="size-8"/>
-				Experiencia Laboral
-			</h2>
-			<Experience />
-		</SectionComptainer>
-		<SectionComptainer id="proyectos">
-			<h2 class="text-2xl font-semibold mb-6 flex gap-x-3 items-center">
-				<Code class="size-8"/>
-				Proyectos
-			</h2>
-			<Projects />
-		</SectionComptainer>
-		<SectionComptainer id="sobre-mi">
-			<h2 class="text-2xl font-semibold mb-6 flex gap-x-3 items-center">
-				<ProfileCheck class="size-8"/>
-				<Code class="size-8"/>
-				Sobre mi
-			</h2>
-			<AboutMe />
-		</SectionComptainer>
-	</main>
+    <SectionContainer id="sobre-mi">
+      <h2
+        class="flex items-center mb-6 text-3xl font-semibold gap-x-8 text-black/80 dark:text-white"
+      >
+        <ProfileCheck class="size-8" />
+        Sobre mí
+      </h2>
+      <AboutMe />
+    </SectionContainer>
+  </div>
+  </main>
 </Layout>
-º
-
