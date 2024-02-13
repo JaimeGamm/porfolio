@@ -3,6 +3,13 @@ import GitHub from "./icons/GitHub.astro"
 import NextJS from "./icons/NextJS.astro"
 import Tailwind from "./icons/Tailwind.astro"
 import Link from "./icons/Link.astro"
+import React from "./icons/React.astro"
+import Python from "./icons/Python.astro"
+import Mongo_Db from "./icons/MongoDB.astro"
+import JavaScript from "./icons/JavaScript.astro"
+import Nodejs from "./icons/Nodejs.astro"
+import Mysql from "./icons/mysql.astro"
+import Power_Bi from "./icons/Power_Bi.astro"
 import LinkButton from "./LinkButton.astro"
 
 const TAGS = {
@@ -16,31 +23,89 @@ const TAGS = {
     class: "bg-[#003159] text-white",
     icon: Tailwind,
   },
+  REACT: {
+    name: "React",
+    class: "bg-[#003159] text-white",
+    icon: React,
+  },
+  PYTHON: {
+    name: "Python",
+    class: "bg-[#003159] text-white",
+    icon: Python,
+  },
+  MONGO_DB: {
+    name: "Mongo DB",
+    class: "bg-[#003159] text-white",
+    icon: Mongo_Db,
+  },
+  JAVA_SCRIPT: {
+    name: "JavaScript",
+    class: "bg-[#003159] text-white",
+    icon: JavaScript,
+  },
+  NODE_JS: {
+    name: "Node.js",
+    class: "bg-[#003159] text-white",
+    icon: Nodejs,
+  },
+  MY_SQL: {
+    name: "Mysql",
+    class: "bg-[#003159] text-white",
+    icon: Mysql,
+  },
+  POWER_BI: {
+    name: "Power Bi",
+    class: "bg-[#003159] text-white",
+    icon: Power_Bi,
+  },
 }
 const PROJECTS = [
   {
-    title: "SVGL - A beautiful library with SVG logos",
+    title: "Trinsk",
     description:
-      "Biblioteca de logos SVG de las marcas más populares. +10k visitas al mes. +2K svgs descargados. Creado desde cero con Next.js, React y Tailwind CSS.",
-    link: "https://svgl.vercel.app/",
-    github: "https://github.com/pheralb/svgl",
-    image: "/projects/svgl.webp",
-    tags: [TAGS.NEXT, TAGS.TAILWIND],
+      "Trinsk es un proyecto colaborativo que recopila y analiza datos otorgados por la alcaldía de medellín , que permite identificar riesgosidad, zonas de gran accidentalidad de tráfico y visualización de data, que permite a cualquier usuario con conexión de internet utilizarlo para el uso personal e informativo que entrega el aplicativo. Este aplicativo, cuenta con una vista para celular y computadora , que se ajusta a las resoluciones de la pantalla, otorgando mejores diseños y una mejor experiencia de usuario.",
+    link: "*",
+    github: "*",
+    image: "/src/images/thinks.png",
+    autores: "Jaime De Jesús Saenz Gamboa, Johan Sebastián Martínez Junco, Fabián Camilo Ojeda Hurtado",
+    tags: [TAGS.REACT,TAGS.PYTHON, TAGS.MONGO_DB],
   },
   {
-    title: "AdventJS - Retos de programación con JavaScript y TypeScript",
+    title: "APPDEMY",
     description:
-      "Plataforma gratuita con retos de programación. Más de 1 millón de visitas en un mes. +50K retos completados. Creada desde cero con Next.js, React y Tailwind CSS.",
-    link: "https://adventjs.dev",
-    image: "/projects/adventjs.webp",
-    tags: [TAGS.NEXT, TAGS.TAILWIND],
+      "Es un aplicativo web que permite gestionar la información del desarrollo de una academia de taekwondo",
+    link: "*",
+    github: "*",
+    image: "/src/images/232shots_so.png",
+    autores: "Jaime De Jesús Saenz Gamboa, Johan Sebastián Martínez Junco",
+    tags: [TAGS.JAVA_SCRIPT,TAGS.REACT,TAGS.NODE_JS, TAGS.MY_SQL],
+  },
+  {
+    title: "Predicción del Valor de Viviendas en California mediante Machine Learning",
+    description:
+      "Es un proyecto de machine learning utilizando un conjunto de datos cuyo objetivo era predecir el valor de las viviendas por zonas en California. Para lograrlo, tuve que analizar y distribuir las variables que más influyen en el precio de la vivienda, como el número de habitaciones, su tamaño y la ubicación geográfica.",
+    link: "*",
+    github: "*",
+    image: "/src/images/Viviendas.png",
+    autores: "*",
+    tags: [TAGS.PYTHON],
+  },
+  {
+    title: "DASHABOARD FINACIERO ",
+    description:
+      "Se desarrolló un DASHBOARD FINANCIERO que facilita la respuesta a preguntas clave, tales como: ¿Cuáles son las ventas totales en un periodo? y ¿Ventas totales por artículos?. Este dashboard se construyó mediante un proceso ETL.",
+    link: "*",
+    github: "*",
+    image: "/src/images/DASHABOARD FINACIERO.png",
+    autores: "*",
+    tags: [TAGS.POWER_BI, TAGS.MY_SQL],
   },
 ]
 ---
 
 <div class="flex flex-col gap-y-16">
   {
-    PROJECTS.map(({ image, title, description, tags, link, github }) => (
+    PROJECTS.map(({ image, title, description, tags, link, github, autores }) => (
     <article class="flex flex-col space-x-0 space-y-8 group md:flex-row md:space-x-8 md:space-y-0">
   <div class="w-full md:w-1/2">
     <div class="relative flex flex-col items-center col-span-6 row-span-5 gap-8 transition duration-500 ease-in-out transform shadow-xl overflow-clip rounded-xl sm:rounded-xl md:group-hover:-translate-y-1 md:group-hover:shadow-2xl lg:border lg:border-gray-800 lg:hover:border-gray-700 lg:hover:bg-gray-800/50">
@@ -68,14 +133,17 @@ const PROJECTS = [
 
       <div class="mt-2 text-gray-700 dark:text-gray-400">{description}</div>
       <footer class="flex items-end justify-start mt-4 gap-x-4">
-          {github && (
+          {autores !="*" && (
+            <div class="mt-2 text-gray-700 dark:text-gray-400"><strong class="text-1xl font-semibold text-gray-800 dark:text-gray-100"> Autores: <br></strong>{autores}</div>
+          )}
+          {github !="*" && (
             <LinkButton href={github}>
               <GitHub class="size-6" />
               Code
               
             </LinkButton>
           )}
-          {link && (
+          {link !="*" && (
             <LinkButton href={link}>
               <Link class="size-4" />
               Preview
