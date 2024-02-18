@@ -10,6 +10,7 @@ import JavaScript from "./icons/JavaScript.astro"
 import Nodejs from "./icons/Nodejs.astro"
 import Mysql from "./icons/mysql2.astro"
 import Power_Bi from "./icons/Power_Bi.astro" 
+import AstroIcon from "./icons/AstroIcon.astro" 
 
 import LinkButton from "./LinkButton.astro"
 
@@ -59,6 +60,11 @@ const TAGS = {
     class: "bg-[#003159] text-white",
     icon: Power_Bi,
   },
+  ASTROICONO: {
+    name: "Astro",
+    class: "bg-[#003159] text-white",
+    icon: AstroIcon,
+  },
 }
 const PROJECTS = [
   {
@@ -101,6 +107,16 @@ const PROJECTS = [
     autores: "*",
     tags: [TAGS.POWER_BI, TAGS.MY_SQL],
   },
+  {
+    title: "DASHABOARD FINACIERO ",
+    description:
+      "Es una página web cuyo objetivo es exhibir mi trabajo fotográfico, destacando la belleza de la naturaleza, retratos cautivadores y mis fascinantes viajes. Descubre mi perspectiva visual a través de imágenes cautivadoras y momentos inolvidables.",
+    link: "https://jaimegamm-fotografo.netlify.app/",
+    github: "*",
+    image: "/webfotos.png",
+    autores: "*",
+    tags: [TAGS.ASTROICONO, TAGS.JAVA_SCRIPT],
+  }
 ]
 ---
 
