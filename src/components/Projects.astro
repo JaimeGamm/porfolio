@@ -11,10 +11,22 @@ import Nodejs from "./icons/Nodejs.astro"
 import Mysql from "./icons/mysql2.astro"
 import Power_Bi from "./icons/Power_Bi.astro" 
 import AstroIcon from "./icons/AstroIcon.astro" 
+import googleAnalytics from "./icons/googleAnalytics.astro" 
+import Semrush from "./icons/Semrush.astro" 
 
 import LinkButton from "./LinkButton.astro"
 
 const TAGS = {
+  SEMRUSH: {
+    name: "Semrush",
+    class: "bg-[#003159] text-white",
+    icon: Semrush,
+  },
+  GOOGLE_ANALYTICS: {
+    name: "Google Analytics",
+    class: "bg-[#003159] text-white",
+    icon: googleAnalytics,
+  },
   NEXT: {
     name: "Next.js",
     class: "bg-black text-white",
@@ -67,6 +79,16 @@ const TAGS = {
   },
 }
 const PROJECTS = [
+{
+    title: "Página web de Senderismo Pa' Sumercé",
+    description:
+      "Senderismo Pa' Sumercé es un grupo de senderismo que organiza salidas a diferentes lugares del país, promoviendo la exploración y el disfrute de la naturaleza. Diseñé y programé la página web para Senderismo Pa' Sumercé, asegurando una experiencia de usuario intuitiva y visualmente atractiva. Posteriormente, realicé la optimización para motores de búsqueda (SEO) de la página, mejorando su visibilidad y posicionamiento en los resultados de búsqueda de Google.",
+    link: "https://senderismopasumerce.com/",
+    github: "*",
+    image: "/senderismopasurmece.webp",
+    autores: "Jaime De Jesús Saenz Gamboa",
+    tags: [TAGS.ASTROICONO, TAGS.JAVA_SCRIPT,TAGS.NODE_JS, TAGS.MY_SQL,TAGS.SEMRUSH],
+  },
   {
     title: "Trinsk",
     description:
